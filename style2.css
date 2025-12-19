@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 24px;
+    font-family: "Pieces_of_Eight", sans-serif;
+    font-style: oblique;
+    color: rgb(255, 255, 255);
+    background-image: url("fond_ecran.webp"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-color 0.5s, color 0.5s; 
+}
+
+
+body.light {
+    background-image: url("fondclair.jpg");
+    color: rgb(2, 19, 255);
+}
+
+
+#BoutonTheme {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+#boutonmenu {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+
+#Menu { 
+    position: fixed;
+    top: 0;
+    left: -250px; /*position de notre menu quand il n'est pas ouvert*/
+    width: 250px;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1000;
+}
+
+
+#Menu.show { 
+    transform: translateX(250px);/*decale le menu pour qu'il soit visible*/
+}
+
+
+
+
+.section {
+    display: flex;
+    gap: 20px;
+    margin: 20px;
+    flex-wrap: wrap; 
+}
+
+.section1 {
+    background-color: rgb(255, 0, 0);
+    padding: 10px;
+    align-items: center;
+    
+}
+
+
+
+ul {
+    width: 100vw;
+    padding: 10px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+li {
+    display: inline-block;
+    width: 200px;
+    background-color: #000000;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    margin: 0 10px;
+    scroll-snap-align: center;
+    text-align: left;
+    transition: transform 0.3s; 
+}
+
+li:nth-child(even) { /*permet d'avoir l'effet echiquier sur nos block*/
+    background-color: rgb(255, 0, 0);
+}
+
+
+
+li img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
